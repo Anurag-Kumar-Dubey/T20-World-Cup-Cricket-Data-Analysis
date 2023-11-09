@@ -1,7 +1,7 @@
 /* -------------- STAGE 1 ------------ */
 
 //------- 1.a Interaction Code ------ //
-navigate('https://stats.espncricinfo.com/ci/engine/records/team/match_results.html?id=14450;type=tournament');
+navigate('https://www.espncricinfo.com/records/tournament/team-match-results/icc-men-s-t20-world-cup-2022-23-14450');
 
 
 let links = parse().matchSummaryLinks;
