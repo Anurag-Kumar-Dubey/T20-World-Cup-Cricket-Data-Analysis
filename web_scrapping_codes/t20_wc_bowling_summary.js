@@ -11,7 +11,7 @@ for(let i of links) {
 
 //------- 1.b Parser Code ------------//
 let links = []
-const allRows = $('table.engineTable > tbody > tr.data1');
+const allRows = $('table.ds-table tbody tr1');
  	allRows.each((index, element) => {
   	const tds = $(element).find('td');
   	const rowURL = "https://www.espncricinfo.com" +$(tds[6]).find('a').attr('href');
