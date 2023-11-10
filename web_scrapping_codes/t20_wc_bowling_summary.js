@@ -11,7 +11,7 @@ for(let i of links) {
 
 //------- 1.b Parser Code ------------//
 let links = []
-const allRows = $('table.ds-table tbody tr1');
+const allRows = $('table.ds-table tbody tr');
  	allRows.each((index, element) => {
   	const tds = $(element).find('td');
   	const rowURL = "https://www.espncricinfo.com" +$(tds[6]).find('a').attr('href');
@@ -28,12 +28,10 @@ navigate(input.url);
 collect(parse());
 
 //---------- 2.b Parser Code ---------//
-var match = $('div').filter(function(){
-	return $(this)
-      .find('span > span > span').text() === String("Match Details") 
-}).siblings()
-team1 = $(match.eq(0)).find('span > span > span').text().replace(" Innings", "")
-team2 = $(match.eq(1)).find('span > span > span').text().replace(" Innings", "")
+var matchDetails = $('div.ds-flex-row span.ds-inline-flex span.ds-text-tight-xs');
+
+var team1 = matchDetails.eq(0).text().replace(" Innings", "");
+var team2 = matchDetails.eq(1).text().replace(" Innings", "");
 matchInfo = team1 + ' Vs ' + team2
 
 var tables = $('div > table.ds-table');
