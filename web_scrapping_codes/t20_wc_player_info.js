@@ -23,10 +23,6 @@ return {
 
 
 
-
-
-
-
 /* ------------ STAGE 2 -------------- */
 
 //------- 2.a Interaction Code ------ //
@@ -42,16 +38,14 @@ for(let obj of playersData) {
 }
 
 //---------- 2.b Parser Code ---------//
+
 //to store all the players in a list
-var playersLinks = []
+var playersLinks = [];
 
-var match = $('div').filter(function(){
-	return $(this)
-      .find('span > span > span').text() === String("Match Details") 
-}).siblings()
-team1 = $(match.eq(0)).find('span > span > span').text().replace(" Innings", "")
-team2 = $(match.eq(1)).find('span > span > span').text().replace(" Innings", "")
+var matchDetails = $('div.ds-flex-row span.ds-inline-flex span.ds-text-tight-xs');
 
+var team1 = matchDetails.eq(0).text().replace(" Innings", "");
+var team2 = matchDetails.eq(1).text().replace(" Innings", "");
 
 //for batting players
 var tables = $('div > table.ci-scorecard-table');
